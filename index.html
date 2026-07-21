@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación de Boda</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
+img{display:block;width:100%;max-width:700px;margin:auto}
+#musicButton{position:fixed;right:20px;bottom:20px;width:64px;height:64px;border:none;border-radius:50%;background:#800020;color:#fff;font-size:26px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<audio id="music" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+<button id="musicButton">▶</button>
+
+<img src="1.png">
+<img src="2.png">
+<img src="3.png">
+<img src="4.png">
+<img src="5.png">
+<img src="6.png">
+<img src="7.png">
+<img src="8.png">
+<img src="9.png">
+
+<script>
+const audio=document.getElementById('music');
+const btn=document.getElementById('musicButton');
+btn.onclick=async()=>{
+ if(audio.paused){
+   try{await audio.play();btn.textContent='⏸';}
+   catch(e){alert('Pulsa otra vez para iniciar la música');}
+ }else{
+   audio.pause();
+   btn.textContent='▶';
+ }
+}
+</script>
+</body>
+</html>
